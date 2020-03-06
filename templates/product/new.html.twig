@@ -16,7 +16,7 @@
             $collectionHolder = $('ul.features');
 
             // add a delete link to all of the existing tag form li elements
-            $collectionHolder.find('li').each(function () {
+            $collectionHolder.find('li:first').each(function () {
                 addTagFormDeleteLink($(this));
             });
 
@@ -25,7 +25,7 @@
 
             // count the current form inputs we have (e.g. 2), use that as the new
             // index when inserting a new item (e.g. 2)
-            $collectionHolder.data('index', $collectionHolder.find(':input').length);
+            $collectionHolder.data('index', $collectionHolder.find(':input').length-1);
 
             $addTagButton.on('click', function (e) {
                 // add a new feature form (see next code block)
